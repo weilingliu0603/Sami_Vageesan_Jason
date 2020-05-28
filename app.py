@@ -307,5 +307,4 @@ def viewmonthlyrevenue():
         return flask.render_template("norevenue.html", Month = Month)
 
 if __name__ == '__main__':
-    app.run(port=12345, debug=True)
-app.run(debug=True)
+    app.run(debug=True, use_reloader=True)
