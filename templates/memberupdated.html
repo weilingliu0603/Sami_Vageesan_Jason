@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Member Updated</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <p>&nbsp;</p>
+            <p>{{FullName}}'s details have been updated successfully!</p>
+        </div>
+    </body>
+</html>

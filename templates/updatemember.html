@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Update Member</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+<output
+        <div id = "MainContent">
+            <form action = "{{url_for('memberupdated')}}" method = "POST">
+                <p>Member ID: <input name = "MemberID" value = "{{MemberID}}"></p>
+                <p>Full Name: <input name = "FullName" value = "{{FullName}}"></p>
+                
+                <table width = 400 height = 50 border = 5>
+                    <th>Details</th>
+                    <th>Current Details</th>
+                    <th>Updated Details</th>
+                    <tr>
+                        <td>Contact Number</td>
+                        <td>{{CurrentContactNumber}}</td>
+                        <td><input name = "NewContactNumber" value = "{{CurrentContactNumber}}"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{CurrentEmail}}</td>
+                        <td><input name = "NewEmail" value = "{{CurrentEmail}}"></td>
+                    </tr>
+                </table>
+                <p>&nbsp;</p>
+                <input type = "submit" value = "Update">
+            </form>
+            
+        </div>
+    </body>
+
+</html>

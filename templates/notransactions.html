@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>No Transactions Found</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <p><strong>No transactions were made on {{ Date }}</strong></p>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>View Monthly Revenue</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <h1>JP Salon Monthly Revenue</h1>
+            <table border = 1>
+                <tr>
+                    <th>Invoice Number</th>
+                    <th>Date</th>
+                    <th>Revenue</th>
+                </tr>
+                {% for i in range(ListInvoiceNumber | length) %}
+                <tr>
+                    <td>{{ ListInvoiceNumber[i] }}</td>
+                    <td>{{ ListDate[i] }}</td>
+                    <td>{{ ListRevenue[i] }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td>Total Revenue</td>
+                    <td>{{ Month }}</td>
+                    <td>{{ Total }}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</html>

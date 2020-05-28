@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Member</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "Main Content">
+            <p>&nbsp;</p>
+            <p><strong>Add a new member</strong></p> 
+
+            <form action = "{{ url_for('memberadded') }}" method = "POST">
+            <table width = "200" height = "200" border = "0">
+                <tr>
+                    <td>Full Name</td>
+                    <td><input name = "FullName"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <select name = "Gender">
+                            <option value = "Male">Male</option>
+                            <option value = "Female">Female</Female></option>
+                        </select>
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input name = "Email"></td>
+                </tr>
+                <tr>
+                    <td width = 300>Contact Number</td>
+                    <td><input name = "Contact"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input name = "Address"></td>
+                </tr>
+            </table>
+            <input type = "submit" value = "Submit">
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Find Month</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "Main Content">
+            <p>&nbsp;</p>
+            <p><strong>Find a month to view its revenue</strong></p> 
+
+            <form action = "{{ url_for( 'viewmonthlyrevenue' )}}" method = "POST">
+            <table>
+                <td>Month</td>
+                <td><input type = "month" name = "Month"></td>
+            </table>
+            <input type = "submit" value = "Submit">
+            </form>
+        </div>
+    </body>
+
+</html>

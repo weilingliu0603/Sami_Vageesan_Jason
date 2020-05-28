@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Daily Transactions Summary</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <p>&nbsp;</p>
+            <p><strong>Select a record to view transaction details</strong></p>
+            <form action = "{{ url_for('transactiondetailsfromview') }}" method = "POST">
+                <table border = 1>
+                    <tr>
+                        <th>Select</th>
+                        <th>Invoice Number</th>
+                        <th>Full Name</th>
+                        <th>Total Payable</th>
+                    </tr>
+                    {% for i in range(ListInvoiceNumber | length) %}
+                    <tr>
+                        <td><input type = radio name = InvoiceID value = {{ListInvoiceNumber[i]}}></td>    
+                        <td>{{ ListInvoiceNumber[i] }}</td>
+                        <td>{{ ListName[i] }}</td>
+                        <td>{{ ListTotal[i] }}</td>
+                        
+                        
+                    </tr>
+                    {% endfor %}
+                </table>
+                <input type = "submit" value = "View">
+            </form>
+        </div>
+    </body>
+
+</html>

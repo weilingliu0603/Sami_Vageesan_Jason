@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Add Transaction</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <p>&nbsp;</p>
+            <p><strong>Add a new transaction</strong></p> 
+
+            <form action = "{{ url_for('transactiondetails') }}" method = "POST">
+            <table width = "200" height = "200" border = "0">
+                <tr>
+                    <td>Date</td>
+                    <td><input name = "Date" type = "date"></td>
+                </tr>
+                <tr>
+                    <td>Customer Name</td>
+                    <td><input name = "FullName"></td>
+                </tr>
+                <tr>
+                    <td>Member ID</td>
+                    <td><input name = "MemberID"></td>
+                </tr>
+            </table>
+                
+            <p><strong>Select type of services for customer.</strong></p>
+                    <input type = "checkbox" name = "TypeOfService" value = "Cut (short length)"><label>Cut (short length)</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Cut (medium length)"><label>Cut (medium length)</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Cut (long length)"><label>Cut (long length)</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Colour"><label>Colour</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Highlight (half head)"><label>Highlight (half head)</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Highlight (full head)"><label>Highlight (full head)</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Perm"><label>Perm</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Rebonding"><label>Rebonding</label><br></br>
+                    <input type = "checkbox" name = "TypeOfService" value = "Treatment"><label>Treatment</label><br></br>
+            <input type = "submit" value = "Submit">
+            <p>Note: If customer is not a member, MemberID = 0</p>
+            
+            </form>
+        </div>
+    </body>
+
+</html>

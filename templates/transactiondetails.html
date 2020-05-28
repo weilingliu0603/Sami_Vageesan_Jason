@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Transaction Details</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <h1>JP Salon Invoice</h1>
+            <p>InvoiceNumber: {{ InvoiceID }}</p>
+            <p>Date: {{ Date }}</p>
+            <p>Customer Name: {{ FullName }}</p>
+            <p>Member ID: {{ MemberID }}</p>
+            <table width = 600 border = 1>
+                <tr>
+                    <th>Type Of Service</th>
+                    <th>Price</th>
+                </tr>
+                {% for i in range(ListTypeOfService | length) %}
+                    <tr>
+                        <td>{{ ListTypeOfService[i] }}</td>
+                        <td>{{ ListPrice[i] }}</td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td>Discount</td>
+                    <td>{{ DiscountGiven }}</td>
+                </tr>
+                <tr>
+                    <td>Total Payable</td>
+                    <td>{{ Total }}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+
+</html>

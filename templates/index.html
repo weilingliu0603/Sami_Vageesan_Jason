@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <title>Homepage</title>
+    </head>
+
+    <body>
+        <div id = "Header">
+            <a href = "{{ url_for('homepage')}}">
+                <img src = "{{ url_for('static', filename = 'jpbeautysalonlogo.png') }}" width = "444" height = "110" alt = "Return to Homepage"></img>            </a>
+        </div>
+
+        <div id = "MainContent">
+            <p><b>Welcome! Click an icon to add member, update a member's details, view a member's transaction history, add a new business transaction, view daily transactions or view monthly sales revenue.</b></p>
+            <table width = "300" height = "300" border = "0">
+                <tr>
+                    <td width = "300"><a href = "{{ url_for('addmember') }}"><img src = "{{ url_for('static', filename = 'addmember.png')}}" width = "200" height = "200" alt = "Add Member"></img></a></td>
+                    <td width = "300"><a href = "{{ url_for('findmember') }}"><img src = "{{ url_for('static', filename = 'updatemember.png')}}" width = "200" height = "200" alt = "Update Members' Details"></img></a></td>
+                    <td width = "300"><a href = "{{ url_for('findmembertransactions') }}"><img src = "{{ url_for('static', filename = 'viewmembertransactions.png')}}" width = "200" height = "200" alt = "View a Member's Transaction History"></img></a></td>
+                    <td width = "300"><a href = "{{ url_for('addtransaction') }}"><img src = "{{ url_for('static', filename = 'addtransaction.png')}}" width = "200" height = "200" alt = "Add a New Business Transaction"></img></a></td>
+                    <td width = "300"><a href = "{{ url_for('viewdailytransaction') }}"><img src = "{{ url_for('static', filename = 'viewtransactions.png')}}" width = "200" height = "200" alt = "View Daily Transactions"></img></a></td>
+                    <td width = "300"><a href = "{{ url_for('findmonth') }}"><img src = "{{ url_for('static', filename = 'viewrevenue.png')}}" width = "200" height = "200" alt = "View Monthly Sales Revenue"></img></a></td>
+                </tr> 
+            </table>
+        </div>
+    </body>
+
+</html>
